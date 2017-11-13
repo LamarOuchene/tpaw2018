@@ -1,70 +1,95 @@
-<! doctype html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
-    <script src="js/form-jquery-validation.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title> formulaire </title>
-    <script>
-        $(document).ready(function(){
-            $("button").click(function(){
-                if ($("#nom").val()==""||$("#prenom").val()==""||$("#prenom").val()=="" )
-                                alert("vous devez remlpir tous les champs")
-                                $(".nom").html('Champs obligatoire');
-            });
-        });
-        </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<!-- jquery pour pouvoir utiliser les composants JS de boostap (modal, tooltip...) -->
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+
+<!-- CSS boostrap -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<!-- composants JS de boostrap (modal http://getbootstrap.com/docs/4.0/components/modal/ , collapse...) -->
+<script src="js/bootstrap.min.js"></script>
+
+
+<script src="js/form-jquery-validation.js"></script>
+<script>
+
+</script>
+
 </head>
-
-<body>
-    <h1>
-        <center>TP AW Formulaire V2 </center>
-    </h1>
-    <div class="container">
-        <form action="">
-            Nom: 
-            
-                <input class="form-control" type="text" name="nom" id="nom" placeholder="Nom">
-           <br>
-            Prénom: 
-            
-                <input class="form-control" type="text" name="prenom" id="prenom" minlength="5" maxlength="20" placeholder="Prenom" />
-            <br>
-               Date de naissance:
-      
-                    <input class="form-control" type="Date" name="Date" />
-            <br>        
-            Adresse mail:
-                <input class="form-control" type="email" name="email" minlength="5" maxlength="30" placeholder="Email" />
-             <br>
-                Adresse Postal :
+    <body>
+     <div class="container">
+            <form>
+                <br/>
+                <br/>
+                <br/>
+                    <div class="form-group row">
+                      <label for="Inputnom" class="col-sm-2 col-form-label">Nom</label>
+                      <div class="col-sm-5">
+                        <input type="text"  class="form-control" id="Inputnom" placeholder="entrez votre nom">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputprenom" class="col-sm-2 col-form-label">Prénom</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="inputprenom" placeholder="entrez votre prénom">
+                            </div>
+                    </div>
+                    <div class="form-group row">
+                            <label for="inputdatedenaissance" class="col-sm-2 col-form-label">Date de naissance</label>
+                                <div class="col-sm-5">
+                                    <input type="date" class="form-control" id="inputdatedenaissance" placeholder="jj/mm/aa">
+                                 </div>
+                   </div>
+                   <div class="form-group row">
+                        <label for="inputAdresse" class="col-sm-2 col-form-label">Adresse</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="inputAdresse" placeholder="entrez votre adresse">
+                             </div>
+                  </div>
+                  <div class="form-group row">
+                      
+                        <label for="InputEmail" class="col-sm-2 col-form-label">Mail</label>
+                    <div class="col-sm-5">
+                        <input type="email" class="form-control" id="InputEmail"  placeholder="Entrez votre email"><br/>
+                        <button type="submit" class="btn btn-primary">Valider</button>
+                    </div>              
+                 </div>
                 
-                    <input class="form-control" type="text" name="adresse" minlength="5" maxlength="50" placeholder="Adresse" />
-         <br>
-         <button type="submit" id="submit" class="btn btn-primary" > valider </button>     
-        </form>
-
-
+            </form>
+          
 
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Corps de la modal à modifier après validation du formulaire</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 </body>
 
+
+     
+        
+   
 </html>
